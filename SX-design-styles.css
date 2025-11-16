@@ -154,8 +154,8 @@ body {
 
     -moz-transition-duration: 0.2s;
 
-    --defoult-font-size: clamp(1rem, 1vw, 1.5rem);
-    --title-font-size: clamp(1.5rem, 2.5vw, 2rem);
+    --defoult-font-size: clamp(1rem, 1.25vw, 1.5rem);
+    --title-font-size: clamp(1.5rem, 1.7vw, 2rem);
 
     --defoult-br: 20px
 }
@@ -165,7 +165,7 @@ body {
     background-color: var(--color-dark);
     font-family: var(--font-family);
     color: var(--color-white);
-    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-size: var(--defoult-font-size);
 }
 
 .container {
@@ -330,10 +330,37 @@ header a {
     padding: 2rem 1.25rem;
 }
 
-.info-blocks span {
+.info-block-title {
     font-size: var(--title-font-size);
     font-weight: 500;
     padding-bottom: 1rem;
+    padding-inline: 1rem ;
+}
+
+.price-list {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.price-list li {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.price {
+    white-space: nowrap;
+    padding: 1rem;
+}
+
+.service {
+    padding: 1rem;
+}
+
+.complex-price-list .service, .frontend-price-list .service {
+
 }
 
 .about-me {
@@ -405,25 +432,6 @@ header a {
     justify-content: space-between;
 }
 
-.services {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100%;
-    padding-right: 2rem;
-}
-
-.prices {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100%;
-    white-space: nowrap;
-}
-
-.prices li, .services li {
-    padding: 0.5rem 0;
-}
 
 .design-price-list {
     grid-area: 1 / 3 / 3 / 5;
@@ -466,8 +474,9 @@ header a {
     .complex-price-list { grid-area: 3 / 2 / 4 / 3; }
 
     .info-blocks > * {
-        padding: 2rem 2.5rem;
+        padding: 2rem 0.2rem;
     }
+
 }
 
 @media (max-width: 1200px) {
@@ -518,10 +527,6 @@ header a {
         padding-inline: 0.5rem;
     }
 
-    .info-blocks span {
-        font-size: 1.6rem;
-    }
-
     .about-me img {
         width: 100px;
     }
@@ -540,6 +545,10 @@ header a {
 
     .info-blocks {
         padding: 2rem 1rem 0;
+    }
+
+    .info-block-title {
+        text-align: center;
     }
 }
 
