@@ -140,6 +140,7 @@ body {
 }
 
 :root {
+    --color-grey-lighter: #2e2e2e;
     --color-white: #fff;
     --color-dark: #141414;
     --color-dark-grey: #1a1a1a;
@@ -156,8 +157,12 @@ body {
 
     --defoult-font-size: clamp(1rem, 1.25vw, 1.5rem);
     --title-font-size: clamp(1.5rem, 1.7vw, 2rem);
+    --button-font-size: clamp(1rem, 1.7vw, 2rem);
+    --section-title-font-size: clamp(2rem, 3.4vw, 4rem);
 
-    --defoult-br: 20px
+    --defoult-br: 20px;
+
+    --button-padding: calc(var(--button-font-size)/2 * 1.2) calc(var(--button-font-size)/2 * 1.2 * 1.4)
 }
 
 body {
@@ -260,19 +265,21 @@ header a {
 }
 .do-a-offer {
     white-space: nowrap;
-    padding: calc(var(--defoult-font-size)/2 * 1.2) calc(var(--defoult-font-size)/2 * 1.2 * 1.4);
+    padding: var(--button-padding);
     background-color: var(--color-red);
     border-radius: var(--defoult-br);
     border: none;
     color: var(--color-white);
+    font-size: var(--button-font-size);
 }
 .my-projects {
     white-space: nowrap;
-    padding: calc(var(--defoult-font-size)/2 * 1.2) calc(var(--defoult-font-size)/2 * 1.2 * 1.4);
+    padding: var(--button-padding);
     color: var(--color-white);
     background-color: var(--color-dark-grey);
     border-radius: var(--defoult-br);
     border: none;
+    font-size: var(--button-font-size);
 }
 .my-projects::after {
 
@@ -457,6 +464,129 @@ header a {
     text-align: center;
     padding: 2rem 0 6rem;
 }
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-dark);
+    padding: 2.8rem;
+}
+
+.projects-title {
+    font-size: var(--section-title-font-size);
+    font-weight: 500;
+    margin-bottom: 3.125rem;
+}
+
+.projects-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem 2.5rem;
+}
+
+.selector {
+    background-color: var(--color-dark-grey);
+    border-radius: 999px;
+}
+
+.selector-design, .selector-frontend, .all-works {
+    background-color: var(--color-dark-grey);
+    color: var(--color-white);
+    border: none;
+    border-radius: 999px;
+    font-size: var(--button-font-size);
+    padding: 0.5rem calc(var(--button-font-size) * 3.5);
+    white-space: nowrap;
+}
+
+.all-works {
+    padding-inline: 2.5rem;
+}
+
+.carousel {
+    min-height: fit-content;
+    position: relative;
+    background-color: var(--color-dark-grey);
+    border-radius: 40px;
+    margin-top: 4.4rem;
+
+}
+
+.carousel-window {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-window-blur {
+    content: "";
+    position: absolute;
+    inset: -40px;
+    background: var(--color-dark-red);
+    z-index: -1;
+    filter: blur(100px);
+}
+
+.carousel-track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 4.4rem;
+    margin: 3rem;
+}
+
+.project-card {
+    background-color: var(--color-red);
+    border-radius: var(--defoult-br);
+    min-height: 38.75rem;
+}
+
+.project-card img {
+    background-color: var(--color-grey);
+    width: 28rem;
+    height: 18.75rem;
+    margin: 1.5rem;
+    border-radius: 5px;
+}
+
+.card-description {
+    margin: 1.5rem;
+}
+
+.project-name {
+    font-size: var(--title-font-size);
+    font-weight: 500;
+}
+
+.project-description {
+    font-size: var(--defoult-font-size);
+    font-weight: 300;
+}
+
+.prev-button, .next-button {
+    width: 4.4rem;
+    aspect-ratio: 1;
+    border-radius: 999px;
+    border: none;
+    background-color: var(--color-grey-lighter);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 1rem;
+}
+
+.prev-button {
+    left: 0;
+}
+
+.next-button {
+    right: 0;
+}
+
+
 
 @media (max-width: 1700px) {
     .info-blocks {
