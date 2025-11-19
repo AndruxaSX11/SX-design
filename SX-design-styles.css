@@ -253,6 +253,18 @@ header a {
     font-size: clamp(4rem, 7vw, 8rem);
     font-weight: normal;
 }
+
+#typewriter {
+    border-right: 3px solid var(--color-dark-red);
+    width: fit-content;
+    padding-right: 5px;
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+    50% {border: transparent}
+}
+
 .hello-description p {
     font-size: clamp(1.3rem, 2vw, 2rem);
     font-weight: 300;
@@ -564,6 +576,7 @@ header a {
     width: 29rem;
     height: 19rem;
     margin: 0.75rem;
+    background-color: var(--color-grey);
 }
 
 .card-description {
@@ -582,8 +595,6 @@ header a {
 
 .prev-button, .next-button {
     position: absolute;
-    transform: translateY(-50%);
-    top: 50%;
     border: none;
     cursor: pointer;
     width: 4rem;
@@ -595,10 +606,15 @@ header a {
 
 .next-button {
     right: 0;
+    transform: scale(-1, 1);
 }
 
 .prev-button {
     left: 0;
+}
+
+.next-button::before, .prev-button::before {
+    content: url("icons/arrow-next-prev-btn.svg");
 }
 
 
@@ -641,6 +657,18 @@ header a {
         margin-inline: 1rem;
     }
 
+    .card {
+        min-height: 35rem;
+    }
+    .card img {
+        width: 24rem;
+        height: 17rem;
+    }
+
+    .carousel-container {
+        min-height: 40rem;
+    }
+
 }
 
 @media (max-width: 800px) {
@@ -677,6 +705,34 @@ header a {
 
     .about-me img {
         width: 100px;
+    }
+
+    .card {
+        min-height: 30rem;
+    }
+    .card img {
+        width: 19rem;
+        height: 13rem;
+    }
+
+    .carousel-container {
+        min-height: 35rem;
+    }
+
+    .card-description {
+        padding: 1rem;
+    }
+
+    .projects-nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .selector {
+        max-width: fit-content;
+    }
+
+    .projects-title {
+        margin-bottom: 2rem;
     }
 }
 

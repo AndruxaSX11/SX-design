@@ -6,14 +6,15 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="SX-design-styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>SXdesign</title>
 </head>
 <body>
-    <header class="header">
+    <header class="header" data-aos="fade-down">
         <nav class="navbar">
             <ul class="navlinks">
-                <li><a class="nav-link" href="#">Инфо</a></li>
-                <li><a class="nav-link" href="#">Мои проекты</a></li>
+                <li><a class="nav-link"  href="#info">Инфо</a></li>
+                <li><a class="nav-link"  href="#projects">Мои проекты</a></li>
                 <li><a class="nav-link" href="#">Отзывы</a></li>
                 <li><a class="nav-link" href="#">Контакты</a></li>
             </ul>
@@ -31,22 +32,22 @@
                 <div class="hello-description">
                     <h1 class="visually-hidden">Сайт портфолио SXdesign</h1>
                     <h2 class="visually-hidden">Приветствие</h2>
-                    <h3 class="hello-title">SXdesign</h3>
+                    <h3 class="hello-title" id="typewriter"></h3>
                     <p class="title-description">Сделаю дизайн и сайт для вашего бизнеса</p>
                 </div>
 
-                <div class="hello-btns">
+                <div class="hello-btns" data-aos="fade-up" data-aos-delay="200">
                     <button class="do-a-offer">сделать заказ</button>
                     <button class="my-projects">мои работы</button>
                 </div>
             </div>
         </section>
 
-        <section class="info">
+        <section class="info" id="info">
             <h2 class="visually-hidden">Информация обо мне</h2>
 
             <div class="info-blocks">
-                <div class="about-me">
+                <div class="about-me" data-aos="fade-up">
                     <img src="" alt="">
 
                     <div class="about-me-description">
@@ -55,15 +56,15 @@
                     </div>
                 </div>
 
-                <div class="slogan">
+                <div class="slogan" data-aos="fade-up" data-aos-delay="100">
                     <p>продуманный UI/UX для <br><span class="focus">вашего бизнеса</span></p>
                 </div>
 
-                <div class="discuss-the-project">
+                <div class="discuss-the-project" data-aos="fade-up" data-aos-delay="200">
                     <a href="#">Обсудить Проект</a>
                 </div>
 
-                <div class="design-price-list">
+                <div class="design-price-list" data-aos="fade-up" data-aos-delay="300">
                     <span class="info-block-title">Дизайн</span>
                     <ul class="price-list">
                         <li><span class="service">Адаптивный дизайн сайта</span><span class="price">от 3.000 руб</span></li>
@@ -74,7 +75,7 @@
                     </ul>
                 </div>
 
-                <div class="complex-price-list">
+                <div class="complex-price-list" data-aos="fade-up" data-aos-delay="400">
                     <span class="info-block-title">Комплексные решения</span>
                     <ul class="price-list">
                         <li><span class="service">Лендинг</span><span class="price">от 15.000 руб</span></li>
@@ -83,7 +84,7 @@
                     </ul>
                 </div>
 
-                <div class="frontend-price-list">
+                <div class="frontend-price-list" data-aos="fade-up" data-aos-delay="400">
                     <span class="info-block-title">Создание сайтов</span>
                     <ul class="price-list">
                         <li><span class="service">Вёрстка адаптива</span><span class="price">от 5.000 руб</span></li>
@@ -95,7 +96,7 @@
                 <p class="info-ps">цены могут изменяться от степени сложности проекта</p>
         </section>
 
-        <section class="projects">
+        <section class="projects" id="projects">
             <h2 class="projects-title">Примеры моих работ</h2>
 
             <div class="projects-nav">
@@ -107,7 +108,7 @@
                 <a href="#"><button class="all-works">Весь список работ</button></a>
             </div>
 
-            <div class="carousel-container">
+            <div class="carousel-container" data-aos="fade-up" data-aos-delay="100">
                 <div class="carousel-track">
                     <div class="card">
                         <img src="" alt="">
@@ -163,5 +164,9 @@
     </main>
 
     <script src="index.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
