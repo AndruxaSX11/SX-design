@@ -418,7 +418,7 @@ header a {
     grid-area: 2 / 2 / 3 / 3;
     background-color: var(--color-red);
     border-radius: var(--defoult-br);
-    min-width: 300px;
+    white-space: nowrap;
 }
 
 .discuss-the-project a {
@@ -503,89 +503,89 @@ header a {
     padding-inline: 2.5rem;
 }
 
-.carousel {
-    min-height: fit-content;
+.carousel-container {
     position: relative;
+    width: 100%;
+    min-height: 44rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
     background-color: var(--color-dark-grey);
     border-radius: 40px;
-    margin-top: 4.4rem;
-
-}
-
-.carousel-window {
-    position: relative;
-    display: flex;
-    overflow: hidden;
-    align-items: center;
-    justify-content: center;
-}
-
-.carousel-window-blur {
-    content: "";
-    position: absolute;
-    inset: -40px;
-    background: var(--color-dark-red);
-    z-index: -1;
-    filter: blur(100px);
+    box-shadow: 0 0 60px 1px rgba(255, 53, 53, 0.22);
+    margin-top: 4rem;
 }
 
 .carousel-track {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 4.4rem;
-    margin: 3rem;
+    gap: 70px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+
+    transition: transform 0.5s ease-in-out;
 }
 
-.project-card {
+.card {
+    min-height: 39rem;
     background-color: var(--color-red);
     border-radius: var(--defoult-br);
-    min-height: 38.75rem;
+
+    transform: scale(0.8);
+    opacity: 0.6;
+
+    transition: transform 0.5s ease-in-out;
+    flex-shrink: 0;
+    margin-top: 1rem;
 }
 
-.project-card img {
-    background-color: var(--color-grey);
-    width: 28rem;
-    height: 18.75rem;
-    margin: 1.5rem;
+.card.active {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 20;
+}
+
+.card img {
     border-radius: 5px;
+    width: 29rem;
+    height: 19rem;
+    margin: 0.75rem;
 }
 
 .card-description {
-    margin: 1.5rem;
+    padding: 2rem;
 }
 
-.project-name {
+.card-name {
     font-size: var(--title-font-size);
     font-weight: 500;
 }
 
-.project-description {
+.card-info {
     font-size: var(--defoult-font-size);
     font-weight: 300;
 }
 
 .prev-button, .next-button {
-    width: 4.4rem;
-    aspect-ratio: 1;
-    border-radius: 999px;
-    border: none;
-    background-color: var(--color-grey-lighter);
     position: absolute;
-    top: 50%;
     transform: translateY(-50%);
+    top: 50%;
+    border: none;
+    cursor: pointer;
+    width: 4rem;
+    aspect-ratio: 1;
+    background-color: var(--color-grey-lighter);
+    border-radius: 50%;
     margin: 1rem;
-}
-
-.prev-button {
-    left: 0;
 }
 
 .next-button {
     right: 0;
 }
 
+.prev-button {
+    left: 0;
+}
 
 
 @media (max-width: 1700px) {
