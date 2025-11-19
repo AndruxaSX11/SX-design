@@ -282,6 +282,10 @@ header a {
     font-size: var(--button-font-size);
 }
 .my-projects::after {
+    content: url("icons/arrow-my-works-btn.svg");
+    margin-left: 2rem;
+    display: inline-block;
+    justify-self: center;
 
 }
 .blurs {
@@ -419,6 +423,16 @@ header a {
     background-color: var(--color-red);
     border-radius: var(--defoult-br);
     white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.discuss-the-project::after {
+    content: url("icons/arrow-info-blocks.svg");
+    display: flex;
+    justify-content: end;
+    padding: 1rem;
 }
 
 .discuss-the-project a {
@@ -655,6 +669,10 @@ header a {
         gap: 0;
         justify-content: space-around;
         padding-inline: 0.5rem;
+    }
+
+    .my-projects::after {
+        content: none;
     }
 
     .about-me img {
