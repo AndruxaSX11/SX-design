@@ -22,7 +22,7 @@
     </header>
 
     <main class="content">
-        <section class="hello-block">
+        <section class="hello-block container">
             <div class="blurs">
                 <span class="blur-1"></span>
                 <span class="blur-2"></span>
@@ -43,7 +43,7 @@
             </div>
         </section>
 
-        <section class="info" id="info">
+        <section class="info container" id="info">
             <h2 class="visually-hidden">Информация обо мне</h2>
 
             <div class="info-blocks">
@@ -80,7 +80,7 @@
                     <ul class="price-list">
                         <li><span class="service">Лендинг</span><span class="price">от 15.000 руб</span></li>
                         <li><span class="service">Сайт-промо</span><span class="price">от 22.000 руб</span></li>
-                        <li><span class="service">Многостраничный сайт</span><span class="price">от 35.000 руб</span></li>
+                        <li><span class="service">Корпоративный сайт</span><span class="price">от 35.000 руб</span></li>
                     </ul>
                 </div>
 
@@ -96,7 +96,7 @@
                 <p class="info-ps">цены могут изменяться от степени сложности проекта</p>
         </section>
 
-        <section class="projects" id="projects">
+        <section class="projects container" id="projects">
             <h2 class="projects-title">Примеры моих работ</h2>
 
             <div class="projects-nav">
@@ -108,57 +108,32 @@
                 <a href="#"><button class="all-works">Весь список работ</button></a>
             </div>
 
-            <div class="carousel-container" data-aos="fade-up" data-aos-delay="100">
-                <div class="carousel-track">
-                    <div class="card">
-                        <img src="" alt="">
+           <div class="swiper">
+               <div class="swiper-wrapper">
+                   <div class="swiper-slide">
+                       <img src="" alt="">
+                       <div class="slide-description">
+                           <span class="project-name">Name</span>
+                           <p class="project-description">Description</p>
+                       </div>
 
-                        <div class="card-description">
-                            <h3 class="card-name">Name</h3>
-                            <p class="card-info">Description</p>
-                        </div>
-                    </div>
+                       <div class="slide-description">
+                           <span class="project-name">Name</span>
+                           <p class="project-description">Description</p>
+                       </div>
 
-                    <div class="card">
-                        <img src="" alt="">
+                       <div class="slide-description">
+                           <span class="project-name">Name</span>
+                           <p class="project-description">Description</p>
+                       </div>
 
-                        <div class="card-description">
-                            <h3 class="card-name">Name</h3>
-                            <p class="card-info">Description</p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <img src="" alt="">
-
-                        <div class="card-description">
-                            <h3 class="card-name">Name</h3>
-                            <p class="card-info">Description</p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <img src="" alt="">
-
-                        <div class="card-description">
-                            <h3 class="card-name">Name</h3>
-                            <p class="card-info">Description</p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <img src="" alt="">
-
-                        <div class="card-description">
-                            <h3 class="card-name">Name</h3>
-                            <p class="card-info">Description</p>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="prev-button"></button>
-                <button class="next-button"></button>
-            </div>
+                       <div class="slide-description">
+                           <span class="project-name">Name</span>
+                           <p class="project-description">Description</p>
+                       </div>
+                   </div>
+               </div>
+           </div>
         </section>
 
     </main>
@@ -166,7 +141,9 @@
     <script src="index.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            once: true
+        });
     </script>
 </body>
 </html>

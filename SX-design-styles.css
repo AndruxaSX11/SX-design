@@ -151,7 +151,8 @@ body {
     --font-family: 'Montserrat', sans-serif;
 
     --coontainer-width: 1843px;
-    --container-padding-x: 15px;
+    --container-padding-x: 40px;
+    --container-padding-y: 60px;
 
     -moz-transition-duration: 0.2s;
 
@@ -176,7 +177,7 @@ body {
 .container {
     max-width: calc(var(--coontainer-width) + var(--container-padding-x) * 2);
     margin-inline: auto;
-    padding-inline: var(--container-padding-x);
+    padding: var(--container-padding-y) var(--container-padding-x);
 }
 
 header {
@@ -235,7 +236,6 @@ header a {
     position: relative;
 }
 .hello-content {
-    padding-inline: 2.75rem;
     position: relative;
     z-index: 1;
     height: calc(100vh - 104px);
@@ -344,7 +344,7 @@ header a {
     grid-row-gap: 22px;
     justify-content: space-around;
     align-content: space-around;
-    padding: 8rem 1.5rem 0;
+
 
 }
 
@@ -362,15 +362,16 @@ header a {
 
 .price-list {
     display: flex;
+    width: 100%;
     height: 100%;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .price-list li {
     display: flex;
-    width: 100%;
     justify-content: space-between;
+    border-bottom: 2px solid var(--color-dark-grey);
+
 }
 
 .price {
@@ -382,9 +383,6 @@ header a {
     padding: 1rem;
 }
 
-.complex-price-list .service, .frontend-price-list .service {
-
-}
 
 .about-me {
     grid-area: 1 / 1 / 2 / 3;
@@ -456,6 +454,11 @@ header a {
 .design-price-list, .complex-price-list, .frontend-price-list {
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.design-price-list > *, .complex-price-list > *, .frontend-price-list > * {
+    width: 95%;
 }
 
 .info-block-description-container {
@@ -488,14 +491,13 @@ header a {
     font-weight: 200;
     width: 100%;
     text-align: center;
-    padding: 2rem 0 6rem;
+    margin-top: 1rem;
 }
 
 .projects {
     display: flex;
     flex-direction: column;
     background-color: var(--color-dark);
-    padding: 2.8rem;
 }
 
 .projects-title {
@@ -529,93 +531,6 @@ header a {
     padding-inline: 2.5rem;
 }
 
-.carousel-container {
-    position: relative;
-    width: 100%;
-    min-height: 44rem;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    background-color: var(--color-dark-grey);
-    border-radius: 40px;
-    box-shadow: 0 0 60px 1px rgba(255, 53, 53, 0.22);
-    margin-top: 4rem;
-}
-
-.carousel-track {
-    display: flex;
-    gap: 70px;
-    position: absolute;
-    left: 50%;
-    top: 0;
-
-    transition: transform 0.5s ease-in-out;
-}
-
-.card {
-    min-height: 39rem;
-    background-color: var(--color-red);
-    border-radius: var(--defoult-br);
-
-    transform: scale(0.8);
-    opacity: 0.6;
-
-    transition: transform 0.5s ease-in-out;
-    flex-shrink: 0;
-    margin-top: 1rem;
-}
-
-.card.active {
-    transform: scale(1);
-    opacity: 1;
-    z-index: 20;
-}
-
-.card img {
-    border-radius: 5px;
-    width: 29rem;
-    height: 19rem;
-    margin: 0.75rem;
-    background-color: var(--color-grey);
-}
-
-.card-description {
-    padding: 2rem;
-}
-
-.card-name {
-    font-size: var(--title-font-size);
-    font-weight: 500;
-}
-
-.card-info {
-    font-size: var(--defoult-font-size);
-    font-weight: 300;
-}
-
-.prev-button, .next-button {
-    position: absolute;
-    border: none;
-    cursor: pointer;
-    width: 4rem;
-    aspect-ratio: 1;
-    background-color: var(--color-grey-lighter);
-    border-radius: 50%;
-    margin: 1rem;
-}
-
-.next-button {
-    right: 0;
-    transform: scale(-1, 1);
-}
-
-.prev-button {
-    left: 0;
-}
-
-.next-button::before, .prev-button::before {
-    content: url("icons/arrow-next-prev-btn.svg");
-}
 
 
 @media (max-width: 1700px) {
@@ -623,7 +538,6 @@ header a {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, auto);
-        padding: 4rem 5rem 0;
     }
 
     .about-me { grid-area: 1 / 1 / 2 / 3; }
@@ -644,7 +558,7 @@ header a {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, auto);
-        padding: 4rem 2rem 0;
+
     }
 
     .about-me { grid-area: 1 / 1 / 2 / 3; }
@@ -657,17 +571,6 @@ header a {
         margin-inline: 1rem;
     }
 
-    .card {
-        min-height: 35rem;
-    }
-    .card img {
-        width: 24rem;
-        height: 17rem;
-    }
-
-    .carousel-container {
-        min-height: 40rem;
-    }
 
 }
 
@@ -707,22 +610,6 @@ header a {
         width: 100px;
     }
 
-    .card {
-        min-height: 30rem;
-    }
-    .card img {
-        width: 19rem;
-        height: 13rem;
-    }
-
-    .carousel-container {
-        min-height: 35rem;
-    }
-
-    .card-description {
-        padding: 1rem;
-    }
-
     .projects-nav {
         flex-direction: column;
         gap: 1rem;
@@ -745,10 +632,6 @@ header a {
 
     .hello-btns {
         gap: 5rem;
-    }
-
-    .info-blocks {
-        padding: 2rem 1rem 0;
     }
 
     .info-block-title {
@@ -774,6 +657,14 @@ header a {
 
     .hello-btns {
         gap: 3rem;
+    }
+
+    .service {
+        padding: 1rem 5px;
+    }
+
+    .price {
+        padding: 1rem 5px;
     }
 }
 
