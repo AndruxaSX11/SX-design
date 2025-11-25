@@ -15,3 +15,6 @@ function typeWriter() {
 
 typeWriter()
 
+const swiper = new Swiper(".mySwiper", {
+
+});

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="SX-design-styles.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>SXdesign</title>
 </head>
 <body>
@@ -23,11 +24,6 @@
 
     <main class="content">
         <section class="hello-block">
-            <div class="blurs">
-                <span class="blur-1"></span>
-                <span class="blur-2"></span>
-            </div>
-
             <div class="hello-content container">
                 <div class="hello-description">
                     <h1 class="visually-hidden">Сайт портфолио SXdesign</h1>
@@ -111,7 +107,7 @@
                     <a href="#"><button class="all-works">Весь список работ</button></a>
                 </div>
 
-               <div class="swiper">
+               <div class="swiper mySwiper">
                    <div class="swiper-wrapper">
                        <div class="swiper-slide">
                            <img src="" alt="">
@@ -119,17 +115,26 @@
                                <span class="project-name">Name</span>
                                <p class="project-description">Description</p>
                            </div>
+                       </div>
 
+                       <div class="swiper-slide">
+                           <img src="" alt="">
                            <div class="slide-description">
                                <span class="project-name">Name</span>
                                <p class="project-description">Description</p>
                            </div>
+                       </div>
 
+                       <div class="swiper-slide">
+                           <img src="" alt="">
                            <div class="slide-description">
                                <span class="project-name">Name</span>
                                <p class="project-description">Description</p>
                            </div>
+                       </div>
 
+                       <div class="swiper-slide">
+                           <img src="" alt="">
                            <div class="slide-description">
                                <span class="project-name">Name</span>
                                <p class="project-description">Description</p>
@@ -142,6 +147,7 @@
 
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="index.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -149,5 +155,6 @@
             once: true
         });
     </script>
+
 </body>
 </html>
