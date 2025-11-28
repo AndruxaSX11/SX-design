@@ -28,13 +28,13 @@ const swiper = new Swiper(".mySwiper", {
         momentumBounce: false, // Отключает "отпружинивание" в конце
     },
 
-    speed: 600,
+    speed: 400,
     preventInteractionOnTransition: true,
 
     // Настройки колеса мыши
     mousewheel: {
         enabled: true,
-        sensitivity: 0.1, // Можно настроить чувствительность (чем меньше число, тем медленнее)
+        sensitivity: 2, // Можно настроить чувствительность (чем меньше число, тем медленнее)
         thresholdDelta: 50,
         thresholdTime: 100,
     },
