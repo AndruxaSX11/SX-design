@@ -17,19 +17,16 @@ typeWriter()
 
 const swiper = new Swiper(".mySwiper", {
     direction: "horizontal",
-    slidesPerView: 1,
+    slidesPerView: "auto",
     spaceBetween: 30,
     centeredSlides: true,
     allowTouchMove: true,
 
     freeMode: {
         enabled: false,
-        momentum: false, // <--- ГЛАВНАЯ НАСТРОЙКА: отключает инерцию
-        momentumBounce: false, // Отключает "отпружинивание" в конце
     },
 
     speed: 400,
-    preventInteractionOnTransition: true,
 
     // Настройки колеса мыши
     mousewheel: {
@@ -38,4 +35,25 @@ const swiper = new Swiper(".mySwiper", {
         thresholdDelta: 50,
         thresholdTime: 100,
     },
+
+    loop: true,
+
+    navigation: {
+        nextEl: ".swiper-button-next", // Класс кнопки "Вперед"
+        prevEl: ".swiper-button-prev", // Класс кнопки "Назад"
+    },
+
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
+    },
+
+    breakpoints: {
+        1200: {
+            mousewheel: {
+                enabled: false,
+            },
+        }
+    }
 });
